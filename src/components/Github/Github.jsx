@@ -5,11 +5,15 @@ function Github(){
     useEffect(()=>{
         fetch('https://api.github.com/users/amitmamgai2k').then(res=>res.json()).then(data=>{
               setdata(data)
+              console.log(data);
         })
     },[])
     return(
-     <div className="text-center m-4 bg-gray-400 text-white p-4 text-3xl"> Github Followers:{data.followers}
-     <img src={data.avatar_url} alt="Git Picture" width="300px" className="text-center rounded-full"/>
+     <div className="text-center   bg-gradient-to-r from-gray-500 ... text-black text-3xl p-4"> Github Followers:{data.followers}
+     <div className="grid grid-flow-col gap-10 w-auto justify-center item-center ">
+     <img src={data.avatar_url} alt="Git Picture" width="200px" className="text-center  mx-4  rounded-full"/>
+     <p className="text-black font-mono text-lg mt-20">  {data.bio}</p>
+     </div>
      </div>
     )
 }
